@@ -40,10 +40,5 @@ A simple PHP CRUD (Create, Read, Update, Delete) application for managing a list
 
 ## File Structure
 
-`index.php` — Main page, lists users and add form /n
-`add.php` — Handles adding a new user
-`edit.php` — Edit user form
-`save.php` — Handles saving edited user (not shown above, but should exist)
-`del.php` — Handles deleting a user
-`db.php` — Database connection and fetch users
+`index.php` — Main page; contains all CRUD functions (list, add, edit, delete users)
 `readme.md` — Project documentation
