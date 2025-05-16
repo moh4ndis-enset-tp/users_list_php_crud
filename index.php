@@ -81,6 +81,12 @@ if (isset($_GET['action'])) {
 // Fetch all users
 $stmt = executeSQL("SELECT * FROM users");
 $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+// Reset AUTO_INCREMENT if the table is empty
+if (count($users) === 0) {
+    executeSQL("ALTER TABLE users AUTO_INCREMENT = 1");
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -220,6 +226,7 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             <?php endforeach; ?>
                         <?php else: ?>
                             <tr>
+                              
                                 <td colspan="7" class="text-center">No users found</td>
                             </tr>
                         <?php endif; ?>
